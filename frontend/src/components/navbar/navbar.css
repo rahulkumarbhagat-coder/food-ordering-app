@@ -1,0 +1,168 @@
+.navbar {
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  width: 150px;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+  color: #49557e;
+  font-size: 17px;
+  margin: 0;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 40%;
+
+  button {
+    padding: 10px 30px;
+    font-size: 16px;
+    color: #49557e;
+    background-color: transparent;
+    border: 1px solid tomato;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+  button:hover {
+    background-color: tomato;
+    color: white;
+    border: 1px solid tomato;
+  }
+}
+
+.active {
+  padding-bottom: 2px;
+  border-bottom: 2px solid #49557e;
+}
+
+.navbar-search-icon {
+  position: relative;
+
+  .dot {
+    position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    top: -5px;
+    right: -5px;
+    background-color: tomato;
+    border-radius: 50%;
+  }
+}
+
+.basket {
+  position: relative;
+}
+
+.navbar-profile{
+  position: relative;
+}
+
+.navbar-profile-dropdown{
+  position: absolute;
+  display: none;
+  right: 0;
+  z-index: 1;
+}
+
+.navbar-profile:hover .navbar-profile-dropdown{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: #fff2ef;
+  padding: 12px 25px;
+  border-radius: 4px;
+  border: 1px solid tomato;
+  outline: 2px solid white;
+  list-style: none;
+}
+
+.navbar-profile-dropdown li{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+
+  p{
+    margin-bottom: 0px;
+  }
+}
+
+.navbar-profile-dropdown img{
+  width: 20px;
+}
+
+.navbar-profile-dropdown li:hover{
+  color: tomato;
+}
+
+/* for 1050 width */
+
+@media (max-width: 1050px) {
+  .navbar-brand {
+    width: 140px;
+  }
+  
+  .navbar-menu{
+    gap: 18px;
+    font-size: 15px;
+  }
+
+  .navbar-right{
+    gap: 30px;
+
+    img{
+      width: 22px;
+    }
+
+    button{
+      padding: 8px 25px;
+    }
+  }
+}
+
+/* for 900 width */
+
+@media (max-width: 900px) {
+  .navbar-brand {
+    width: 120px;
+  }
+  
+  .navbar-menu{
+    gap: 15px;
+    font-size: 14px;
+  }
+
+  .navbar-right{
+    gap: 20px;
+
+    img{
+      width: 20px;
+    }
+
+    button{
+      padding: 7px 20px;
+      font-size: 15px;
+    }
+  }
+}
+
+/* for 750 width */
+
+@media (max-width: 768px) {
+  .navbar-menu{
+    display: none;
+  }
+}
