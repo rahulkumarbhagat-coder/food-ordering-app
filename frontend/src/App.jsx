@@ -10,40 +10,15 @@ import AppDownload from './components/appDownload/AppDownload'
 import LoginPopup from './components/loginPopUp/LoginPopup'
 import Verify from './pages/verify/Verify'
 import MyOrders from './pages/myOrders/MyOrders'
-import {motion} from 'framer-motion'
 
 const App = () => {
 
-  const view = {
-    initial: {
-      opacity: 1,
-      y:0,
-    },
-    animate: {
-      opacity: 0,
-      y: '-100%',
-      transition: {
-        duration: 2,
-        delay: 5
-      }
-    }
-  }
-
   const [showLogin, setShowLogin] = useState(false)
-  const videoRef = useRef(null)
 
-  const handleMute = () =>{
-    if (videoRef.current) {
-      videoRef.current.muted = false
-    }
-  }
+  
   return (
     <>
-    <motion.div className="intro" variants={view} initial='initial' animate='animate'>
-      <video ref={videoRef} autoPlay muted playsInline src="intro.mp4"></video>
-      <button onClick={handleMute}>Mute</button>
-    </motion.div>
-    <motion.div className="" initial={{opacity:0}} animate={{opacity:1, transition:{duration:3, delay:5}}}>
+    <div>
     {showLogin?<LoginPopup setShowLogin={setShowLogin}/>: <></>}
     <div className='app'>
       <Navbar setShowLogin={setShowLogin}/>
@@ -57,7 +32,7 @@ const App = () => {
     </div>
     <AppDownload/>
     <Footer/>
-    </motion.div>
+    </div>
     
     </>
     
